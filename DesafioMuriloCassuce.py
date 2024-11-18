@@ -13,6 +13,7 @@ def baixar_arquivo(dia, mes, ano):
     
     #url que realiza o download.
     url = f"https://www.anbima.com.br/informacoes/merc-sec-debentures/arqs/d{ano_str}{mes_str}{dia:02d}.xls"
+    #Nome adicionado conforme solicitado.
     nome_arquivo = f"{ano}{mes:02d}{dia:02d}.xls"
     caminho_arquivo = os.path.join("Daily Prices", nome_arquivo)
     
@@ -48,7 +49,7 @@ def baixar_arquivo(dia, mes, ano):
         print(f"Erro ao tentar baixar o arquivo: {e}")
         return None
 
-#Baixar os últimos 5 arquivos a parti da data atual do objeto date.
+#Baixar os últimos 5 arquivos a partir da data atual do objeto date.
 def baixar_ultimos_5_arquivos():
     hoje = datetime.datetime.now().date()
     arquivos_baixados = []
